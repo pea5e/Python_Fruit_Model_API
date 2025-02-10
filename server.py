@@ -1,13 +1,10 @@
 from flask import Flask, jsonify, request 
 from flask_cors import CORS
   
-# creating a Flask app 
+
 app = Flask(__name__) 
 CORS(app)  
   
-# on the terminal type: curl http://127.0.0.1:5000/ 
-# returns hello world when we use GET. 
-# returns the data that we send when we use POST. 
 @app.route('/', methods = ['GET', 'POST']) 
 def home():
     if request.method == 'POST':
@@ -43,8 +40,7 @@ def home():
     return data
     return jsonify({'data': data})
   
-  
-# driver function 
+
 if __name__ == '__main__': 
   
     app.run(host="0.0.0.0",debug = False) 
